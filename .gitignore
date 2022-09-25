@@ -1,0 +1,8 @@
+
+
+# compilation files
+*/target/*
+*/Cargo.lock
+
+# IDE related file
+*/.idea/*

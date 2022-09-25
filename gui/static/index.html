@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" charset="utf-8"></script>
+    <meta charset="utf-8">
+    <title> Vagk-tool </title>
+  </head>
+  <body>
+    <div class="pure-g" id="">
+      <div class="pure-u-1-3" id="open"><p>OPEN</p><input type="file" accept=".json"></div>
+      <div class="pure-u-1-3" id="save"><p>SAVE</p></div>
+      <div class="pure-u-1-3" id="new"><p>NEW</p></div>
+    </div>
+    <div class="pure-g" id="head-title">
+            <div class="pure-u-1-1"><p>TOOL FOR CRAFTING VAGK KEYBINDS CONFIGURATION</p></div>
+    </div>
+    <div class="pure-g" id="main">
+      <div class="pure-u-2-3" id="canvas">
+        <div class="pure-g" id="">
+          <div class="pure-u-1-3" id="add"><p>ADD</p></div>
+          <div class="pure-u-1-3" id="search"><p>SEARCH</p></div>
+          <div class="pure-u-1-3" id="check"><p>CHECK</p></div>
+        </div>
+        <div class="general_parameters">
+          <div class="field">
+            <label class="field-name">event_path:</label>
+            <span class="field-content" contenteditable=true id="event-path">/dev/inputX</span>
+            <button class="pure-button right-button" id="button-event-path">AUTO</button>
+          </div>
+
+        </div>
+        <div class="keybinds" id="keybinds">
+        </div>
+      </div>
+      <div class="pure-u-1-3" id="side">
+        <div class="pure-g" id="toolbar">
+          <div class="pure-u-1-2" id="clone"><p>CLONE</p></div>
+          <div class="pure-u-1-2" id="delete"><p>DELETE</p></div>
+        </div>
+        <div class="keybinds" >
+          <div class="editable-keybind" id="side-canvas">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
