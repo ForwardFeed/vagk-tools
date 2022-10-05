@@ -537,33 +537,33 @@ function ContentToJson(){
   for (let i = 0; i < keybinds.length ; i++){
     json["keybinds"][i] = {}
     json["keybinds"][i]["name"]= document.getElementById("keybinds").getElementsByClassName("kb-name")[i].innerHTML
-    json["keybinds"][i]["timer_threshold"]=document.getElementById("keybinds").getElementsByClassName("kb-timer")[i].innerHTML
+    json["keybinds"][i]["timer_threshold"]=Number(document.getElementById("keybinds").getElementsByClassName("kb-timer")[i].innerHTML)
 
     json["keybinds"][i]["sub_keybinds"] = []
     let sub_keybinds = keybinds[i].getElementsByClassName("sub_keybinds")[0].getElementsByClassName("sub_keybind")
     for(let j=0; j< sub_keybinds.length; j++){
       json["keybinds"][i]["sub_keybinds"][j] = {}
-      json["keybinds"][i]["sub_keybinds"][j]["key_code"] = sub_keybinds[j].getElementsByClassName("skb-keycode")[0].innerHTML
+      json["keybinds"][i]["sub_keybinds"][j]["key_code"] = Number(sub_keybinds[j].getElementsByClassName("skb-keycode")[0].innerHTML)
       // key States
       json["keybinds"][i]["sub_keybinds"][j]["key_state"]={}
       let keytype = sub_keybinds[j].getElementsByClassName("select-keytype")[0].value
       if(keytype=="Spam press"){
         keytype="spampress"
-        json["keybinds"][i]["sub_keybinds"][j]["key_state"]["spam_press_time_span"] = sub_keybinds[j].getElementsByClassName("ks-spamtime")[0].innerHTML
-        json["keybinds"][i]["sub_keybinds"][j]["key_state"]["repetition"] = sub_keybinds[j].getElementsByClassName("ks-num")[0].innerHTML
+        json["keybinds"][i]["sub_keybinds"][j]["key_state"]["spam_press_time_span"] = Number(sub_keybinds[j].getElementsByClassName("ks-spamtime")[0].innerHTML)
+        json["keybinds"][i]["sub_keybinds"][j]["key_state"]["repetition"] = Number(sub_keybinds[j].getElementsByClassName("ks-num")[0].innerHTML)
       }else if(keytype=="Long press"){
-        json["keybinds"][i]["sub_keybinds"][j]["key_state"]["press_duration"] = sub_keybinds[j].getElementsByClassName("ks-longtime")[0].innerHTML
+        json["keybinds"][i]["sub_keybinds"][j]["key_state"]["press_duration"] = Number(sub_keybinds[j].getElementsByClassName("ks-longtime")[0].innerHTML)
         keytype="longpress"
       }else if(keytype=="Simple key down"){
           keytype="simple"
-          json["keybinds"][i]["sub_keybinds"][j]["key_state"]["key_value"] = "1"
+          json["keybinds"][i]["sub_keybinds"][j]["key_state"]["key_value"] = 1
       }else if(keytype=="Simple key release"){
           keytype="simple"
-          json["keybinds"][i]["sub_keybinds"][j]["key_state"]["key_value"] = "0"
+          json["keybinds"][i]["sub_keybinds"][j]["key_state"]["key_value"] = 0
       }else{
         // DEFAULT !!!
         keytype="simple"
-        json["keybinds"][i]["sub_keybinds"][j]["key_state"]["key_value"] = "1"
+        json["keybinds"][i]["sub_keybinds"][j]["key_state"]["key_value"] = 1
       }
       json["keybinds"][i]["sub_keybinds"][j]["keybind_type"] = keytype
     }
