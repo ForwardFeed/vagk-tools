@@ -67,10 +67,12 @@ pub fn get_last_key() -> String{
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build()
+    let rocket = rocket::build()
         .mount("/", routes![index_html])
         .mount("/", routes![index_js])
         .mount("/", routes![style_css])
         .mount("/", routes![auto_event_path])
-        .mount("/", routes![get_last_key])
+        .mount("/", routes![get_last_key]);
+	println!("http://127.0.0.1:8000");
+	rocket
 }

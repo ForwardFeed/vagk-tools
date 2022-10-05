@@ -1,9 +1,9 @@
-[base]
-address = "localhost"
+[default]
+address = "127.0.0.1"
 port = 8000
 workers = 1
 keep_alive = 5
 read_timeout = 5
 write_timeout = 5
-log = "critical"
+log_level = "off"
 limits = { forms = 32768 }
