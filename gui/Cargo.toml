@@ -1,5 +1,5 @@
 [package]
-name = "vagk-tools"
+name = "gui"
 version = "0.1.0"
 edition = "2021"
 
